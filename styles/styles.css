@@ -18,4 +18,89 @@ body {
   font-family: "PT Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #333;
+  background-color: #fff;
+  letter-spacing: 0;
+}
+
+.button {
+  color: #fff;
+  background-color: #756157;
+  text-align: center;
+}
+
+.list {
+    list-style-type: none;
+}
+
+.navigation-link {
+  color: #000;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-decoration: none;
+}
+
+.navigation-link.button {
+  color: #fff;
+}
+
+.main-index {
+  text-align: center;
+}
+
+.hero {
+  background-image: url(../images/hero_background.jpg);
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.welcome-image {
+  padding: 51px 371px 82px;
+}
+
+.slogan-title {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.slogan-text {
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.blue-card {
+  background-color: #82B3D3;
+  color: #fff
+}
+
+.gray-card {
+  background-color: #83B3D333;
+}
+
+.advantage-title {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.subscribe {
+  background-color: #000;
+  background-image: url("../images/subscribe_background.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  border: none;
+  color: #fff
+}
+
+.contacts-phone {
+  text-decoration: none;
+  color: #000;
+  font-size: 40px;
+  line-height: 40px;
 }
