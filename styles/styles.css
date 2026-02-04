@@ -23,6 +23,7 @@ body {
   color: #333;
   background-color: #fff;
   letter-spacing: 0;
+  margin: 0;
 }
 
 .button {
@@ -64,13 +65,10 @@ body {
 
 .hero {
   background-image: url(../images/hero_background.jpg);
+  background-color: #000;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-}
-
-.welcome-image {
-  padding: 51px 371px 82px;
 }
 
 .slogan-title {
@@ -78,6 +76,7 @@ body {
   line-height: 36px;
   font-weight: 700;
   text-transform: uppercase;
+  color: #000;
 }
 
 .slogan-text {
@@ -85,18 +84,24 @@ body {
   line-height: 26px;
 }
 
-.blue-card {
+.dark-color-card {
   background-color: #82B3D3;
   color: #fff
 }
 
-.gray-card {
+.middle-color-card{
   background-color: #83B3D333;
+  color: #000;
+}
+
+.light-color-card {
+  background-color: #83B3D31F;
 }
 
 .advantage-title {
   font-size: 24px;
   line-height: 28px;
+  color: #000;
 }
 
 .subscribe {
@@ -111,6 +116,7 @@ body {
 
 .distribution-input {
   background-color: #F2F2F2;
+  color: #000;
   border: none;
 }
 
