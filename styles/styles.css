@@ -40,7 +40,7 @@ body {
 }
 
 .list {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 /* Хедер */
@@ -89,7 +89,7 @@ body {
   color: #fff
 }
 
-.middle-color-card{
+.middle-color-card {
   background-color: #83B3D333;
   color: #000;
 }
