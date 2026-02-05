@@ -20,14 +20,15 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
-  color: #333;
-  background-color: #fff;
+  color: #333333;
+  background-color: #ffffff;
   letter-spacing: 0;
+  text-align: center;
   margin: 0;
 }
 
 .button {
-  color: #fff;
+  color: #ffffff;
   font-family: inherit;
   font-weight: 700;
   text-transform: uppercase;
@@ -46,7 +47,7 @@ body {
 /* Хедер */
 
 .navigation-link {
-  color: #000;
+  color: #000000;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -54,18 +55,14 @@ body {
 }
 
 .navigation-link.button {
-  color: #fff;
+  color: #ffffff;
 }
 
 /* Главная страница */
 
-.main-index {
-  text-align: center;
-}
-
 .hero {
-  background-image: url(../images/hero_background.jpg);
-  background-color: #000;
+  background-image: url("../images/hero_background.jpg");
+  background-color: #1e88a8;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -76,7 +73,11 @@ body {
   line-height: 36px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #000;
+  color: #000000;
+}
+
+.white-title {
+  color: #ffffff;
 }
 
 .slogan-text {
@@ -85,38 +86,59 @@ body {
 }
 
 .dark-color-card {
-  background-color: #82B3D3;
-  color: #fff
+  background-color: #82b3d3;
+  color: #ffffff
 }
 
 .middle-color-card {
-  background-color: #83B3D333;
-  color: #000;
+  background-color: rgba(131, 179, 211, 0.2);
+  color: #000000;
 }
 
 .light-color-card {
-  background-color: #83B3D31F;
+  background-color: rgba(131, 179, 211, 0.12);
 }
 
 .advantage-title {
   font-size: 24px;
   line-height: 28px;
-  color: #000;
+  color: #000000;
 }
 
+/* Подписка */
+
 .subscribe {
-  background-color: #000;
+  background-color: #237fe9;
   background-image: url("../images/subscribe_background.jpg");
   background-repeat: no-repeat;
   background-size: 100% auto;
   text-align: center;
   border: none;
-  color: #fff
+  color: #ffffff;
+}
+
+.subscribe-light {
+  background-image: none;
+  background-color: #ffffff;
+}
+
+.dark-title {
+  color: #000000;
+}
+
+.dark-text {
+  color: #333333;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.distribute-button {
+  background-color: #82b3d3;
 }
 
 .distribution-input {
-  background-color: #F2F2F2;
-  color: #000;
+  background-color: #f2f2f2;
+  color: #000000;
   border: none;
 }
 
@@ -124,20 +146,19 @@ body {
 
 .contacts-phone {
   text-decoration: none;
-  color: #000;
+  color: #000000;
   font-size: 40px;
   line-height: 40px;
 }
 
-/* Каталог */
+/* Каталог фильтры */
 
-.main-catalog {
+.catalog-filters{
   background-image: url("../images/catalog/filters_background.jpg");
-  background-color: #cdcbba;
+  background-color: #237fe9;
   background-repeat: no-repeat;
   background-size: 100% auto;
-  color: #000;
-  background-position: top;
+  color: #ffffff;
 }
 
 .inner-header-title {
@@ -145,12 +166,10 @@ body {
   line-height: 78px;
   font-weight: 700;
   text-align: left;
-  color: #fff;
 }
 
 .breadcrumbs-link {
   text-decoration: none;
-  color: #fff;
   font-size: 16px;
   line-height: 21px;
 }
@@ -159,25 +178,22 @@ body {
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
-  color: #fff;
 }
 
 .control {
-  color: #fff;
   font-size: 18px;
   line-height: 23px;
 }
 
 .input-wrapper {
-  color: #000;
+  color: #000000;
   font-size: 18px;
   line-height: 24px;
 }
 
 .submit-price-button,
 .button-transparent {
-  background-color: #82B3D3;
-  color: #fff;
+  background-color: #82b3d3;
   font-size: 16px;
   font-weight: 700;
   font-family: inherit;
@@ -190,7 +206,10 @@ body {
   border: none;
 }
 
+/* Каталог гостиницы */
+
 .amount-hotels {
+  color: #000000;
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
@@ -212,13 +231,12 @@ body {
   font-size: 24px;
   font-weight: 700;
   line-height: 28px;
-  color: #000;
+  color: #000000;
 }
 
 .hotel-item > span {
   font-size: 18px;
   line-height: 21px;
-  color: #333333;
 }
 
 .more-details-button {
@@ -227,19 +245,21 @@ body {
 }
 
 .to-favorite-button {
-  background-color: #82B3D3;
+  background-color: #82b3d3;
 }
 
 .in-favorite-button {
-  background-color: #7DB54F;
+  background-color: #7db54f;
 }
 
 .numeric-rating-text {
   font-size: 16px;
   line-height: 20px;
   color: #333333;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
 }
+
+/* Пагинация */
 
 .pagination-item {
   width: 60px;
@@ -247,41 +267,22 @@ body {
   font-size: 20px;
   font-weight: 700;
   line-height: 60px;
-  color: #fff;
-  background-color: #82B3D3;
+  color: #ffffff;
+  background-color: #82b3d3;
   border-radius: 4px;
   text-align: center;
   vertical-align: middle;
 }
 
 .pagination-item-current {
-  background-color: #F2F2F2;
-  color: #000;
+  background-color: #f2f2f2;
+  color: #000000;
 }
 
 .pagination-more {
-  background-color: #fff;
+  background-color: #ffffff;
   width: 60px;
   height: 60px;
-  color: #000;
+  color: #000000;
   font-weight: 400;
-}
-
-.black-title {
-  color: #000;
-}
-
-.black-text {
-  color: #333333;
-  font-size: 22px;
-  line-height: 26px;
-}
-
-.subscribe-light {
-  background-image: none;
-  background-color: #fff;
-}
-
-.distribute-button {
-  background-color: #82B3D3;
 }
