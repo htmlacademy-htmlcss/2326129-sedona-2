@@ -61,11 +61,11 @@ body {
 /* Главная страница */
 
 .hero {
-  background-image: url("../images/hero_background.jpg");
-  background-color: #1e88a8;
+  background-image: url("../images/divider.svg"), url("../images/hero_background.jpg");
+  background-color: #1e88a8, #1e88a8;
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  background-size: 100% auto, contain;
+  background-position: center bottom, center top;
 }
 
 .slogan-title {
@@ -155,7 +155,7 @@ body {
 
 .catalog-filters{
   background-image: url("../images/catalog/filters_background.jpg");
-  background-color: #237fe9;
+  background-color: #8b5547;
   background-repeat: no-repeat;
   background-size: 100% auto;
   color: #ffffff;
@@ -170,6 +170,7 @@ body {
 
 .breadcrumbs-link {
   text-decoration: none;
+  color: #ffffff;
   font-size: 16px;
   line-height: 21px;
 }
@@ -189,6 +190,11 @@ body {
   color: #000000;
   font-size: 18px;
   line-height: 24px;
+}
+
+.input-wrapper input {
+  background-color: #f2f2f2;
+  border: none;
 }
 
 .submit-price-button,
