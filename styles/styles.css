@@ -14,7 +14,14 @@
   font-display: swap;
 }
 
+html {
+  height: 100%;
+  background-color: #f2f2f2;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
   font-family: "PT Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -22,9 +29,11 @@ body {
   line-height: 21px;
   color: #333333;
   background-color: #ffffff;
-  letter-spacing: 0;
   text-align: center;
-  margin: 0;
+  margin: 0 auto;
+  outline: 5px solid red;
+  outline-offset: -5px;
+  width: 1200px;
 }
 
 .button {
@@ -44,7 +53,44 @@ body {
   list-style-type: none;
 }
 
+.main-index,
+.main-catalog {
+  flex-grow: 1;
+}
+
 /* Хедер */
+.navigation {
+    outline: 5px solid yellowgreen;
+  outline-offset: -5px;
+  display: flex;
+  /* justify-content: space-between; */
+  width: 1200px;
+  padding-left: 70px;
+  padding-right: 70px;
+  height: 64px;
+}
+
+.navigation-logo {
+  margin-right: 30px;
+}
+
+.navigation-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 339px;
+    outline: 5px solid lightblue;
+  outline-offset: -5px;
+  padding: 0;
+  margin-right: 285px;
+  margin-top: 0;
+  margin-bottom: 0;
+
+}
+
+.navigation-list:last-child {
+  margin-right: 0;;
+}
 
 .navigation-link {
   color: #000000;
