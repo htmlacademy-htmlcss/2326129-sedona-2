@@ -86,18 +86,21 @@ body {
   z-index: 1;
 }
 
-.navigation-list {
+.navigation-list  {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 0;
   margin: 0;
-  margin-right: 200px;
+  width: 460px;
+  /* margin-right: 200px; */
 }
 
-.navigation-list:last-child {
+.navigation-user {
   align-items: center;
   margin-left: auto;
+  /* margin-left: auto; */
+  width: 268px;
   margin-right: 0;
 }
 
@@ -123,9 +126,14 @@ body {
   padding: 8px 34px;
   font-size: 16px;
   line-height: 20px;
+  width: 92px;
 }
 
 /* Главная страница */
+
+.page-index {
+  flex-grow: 1;
+}
 
 .hero {
   background-image: url("../images/divider.svg"), url("../images/hero_background.jpg");
@@ -144,7 +152,7 @@ body {
 .slogan {
   padding-top: 69px;
   padding-bottom: 69px;
-  margin-bottom: 21px;
+  /* margin-bottom: 21px; */
 }
 
 .slogan-title {
@@ -165,37 +173,37 @@ body {
 
 /* Преимущества */
 
-.advantages-list,
-.advantage-list {
+.advantages-list {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
+  margin: 0;
 }
 
 
 .advantage-item {
   display: flex;
   flex-direction: column;
-  flex-basis: 33.3%;
+  width: 400px;
   min-height: 385px;
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }
 
 .advantage-item.dark-color-card {
   flex-direction: row;
-  flex-basis: 100%;
-
+  width: 100%;
+  /* flex-basis: 100%; */
 }
 
 .advantages-wrapper {
   flex-grow: 1;
 }
 
-.advantage-list {
+/* .advantage-list {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 0;
-}
+} */
 
 .advantage-title {
   font-size: 24px;
@@ -238,7 +246,13 @@ body {
   padding-bottom: 64px;
 }
 
+/* Поиск гостиницы в Седоне */
 
+.modal-open-button {
+  width: 376px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
 
 /* Подписка */
 
@@ -303,8 +317,7 @@ body {
 }
 
 /* Футер */
-.main-footer {
-  margin-top: auto;
+.page-footer {
   display: flex;
   justify-content: space-between;
   padding-top: 40px;
@@ -335,11 +348,6 @@ body {
 }
 
 /* Каталог фильтры */
-
-.main-catalog {
-  padding: 0;
-  margin: 0;
-}
 
 .inner-header-title {
   margin-top: 0;
