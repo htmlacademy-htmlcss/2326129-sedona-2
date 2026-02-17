@@ -384,7 +384,7 @@ body {
 
 /* Фильтры */
 
-.catalog-filters {
+.catalog {
   background-image: url("../images/catalog/filters_background.jpg");
   background-color: #8b5547;
   background-repeat: no-repeat;
@@ -395,10 +395,34 @@ body {
   padding-left: 70px;
 }
 
+.catalog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.catalog-filter-group {
+  padding: 0;
+  margin: 0;
+}
+
+.catalog-filter-list {
+  padding-left: 0;
+}
+
+.catalog-filter-item {
+  text-align: left;
+}
+
 .catalog-filter-title {
+  text-align: left;
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
+}
+
+.catalog-filter-cost {
+  width: 288px;
 }
 
 .control {
@@ -417,6 +441,15 @@ body {
   border: none;
 }
 
+.filters-action-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  width: 191px;
+
+}
+
 .submit-price-button,
 .button-transparent {
   background-color: #82b3d3;
@@ -425,6 +458,9 @@ body {
   font-family: inherit;
   text-transform: uppercase;
   line-height: 20px;
+  min-height: 36px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .button-transparent {
