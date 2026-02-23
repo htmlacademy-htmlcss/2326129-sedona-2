@@ -170,22 +170,31 @@ body {
 /* Преимущества */
 
 .advantages-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  margin: 0;
+  padding: 0;
 }
 
-.advantage-item-wide{
-  display: flex;
-  width: 100%;
+.advantage-item {
+  min-height: 385px;
   background-color: #82b3d3;
 }
 
-.advantage-item,
-.advantages-wrapper {
-  width: 400px;
-  min-height: 385px;
+
+.advantage-item-wide{
+  grid-column: 1 / -1;
+  display: flex;
+  width: 100%;
 }
 
+.advantage-item-wide-reverse {
+  flex-direction: row-reverse;
+}
+
+.advantages-wrapper {
+  width: 400px;
+}
 
 .advantage-title {
   font-size: 24px;
