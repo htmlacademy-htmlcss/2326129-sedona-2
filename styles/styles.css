@@ -51,6 +51,7 @@ body {
   width: 1200px;
   min-height: 100%;
   background-color: #ffffff;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
 }
 
 .button {
@@ -69,6 +70,10 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 4px;
+}
+
+.button:focus-visible {
+  outline: none;
 }
 
 .list {
@@ -362,7 +367,17 @@ body {
 
 .subscribe-light {
   background-image: none;
-  background-color: #ffffff;
+  background-color: rgb(255, 255, 255);
+  width: 684px;
+  padding: 96px 258px 104px;
+}
+
+.subscribe-light .slogan-title {
+  margin-bottom: 20px;
+}
+
+.subscribe-light .slogan-text {
+  margin-bottom: 54px;
 }
 
 .dark-title {
@@ -384,16 +399,32 @@ body {
   font-size: 20px;
   line-height: 36px;
   background-color: #82b3d3;
-  width: 232px;
+  width: 233px;
   height: 52px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .distribution-input {
   background-color: #f2f2f2;
   color: #000000;
+  font-size: 18px;
+  line-height: 24px;
   border: none;
   width: 452px;
   height: 52px;
+  padding-left: 20px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.subscribe-light .distribution-input {
+  background-color: rgb(255, 255, 255);
 }
 
 .search-hotel {
@@ -446,13 +477,14 @@ body {
   width: 33.33%;
 }
 
+
+
 .footer-social-link {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 40px;
   min-width: 40px;
-
 }
 
 .footer-social-icon {
@@ -514,6 +546,22 @@ body {
 
 /* Каталог фильтры */
 
+.catalog {
+  background-image: url("../images/catalog/filters_background.jpg");
+  background-color: #8b5547;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  color: #ffffff;
+  padding-top: 35px;
+  padding-right: 70px;
+  padding-left: 70px;
+  padding-bottom: 70px;
+}
+
+.catalog-header {
+  margin-bottom: 40px;
+}
+
 .inner-header-title {
   margin-top: 0;
   margin-bottom: 8px;
@@ -566,16 +614,7 @@ body {
 
 /* Фильтры */
 
-.catalog {
-  background-image: url("../images/catalog/filters_background.jpg");
-  background-color: #8b5547;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  color: #ffffff;
-  padding-top: 35px;
-  padding-right: 70px;
-  padding-left: 70px;
-}
+
 
 .catalog-filters {
   display: flex;
@@ -586,9 +625,13 @@ body {
 .catalog-filter-group {
   padding: 0;
   margin: 0;
+  border: none;
 }
 
 .catalog-filter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   padding-left: 0;
 }
 
@@ -601,26 +644,184 @@ body {
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
+  padding: 0;
+  margin-bottom: 32px;
 }
 
 .catalog-filter-cost {
   width: 288px;
+  height: 160px;
 }
 
 .control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-left: 36px;
   font-size: 18px;
   line-height: 23px;
 }
 
+.control-input[type="checkbox"]:checked + .control-mark {
+  background-image: url("../images/catalog/tick_check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.control:hover .control-mark {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.control:hover .control-label {
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.control:active .control-mark {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.control:active .control-label {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.control-mark {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  left: 0;
+}
+
+.control-mark.radiobutton {
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]:checked + .control-mark::before {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: rgb(63, 94, 114);
+  left: 5px;
+  top: 5px;
+  content: "";
+}
+
+.range-cost-inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 45px;
+}
+
+.control-input:focus-visible + .control-mark {
+  outline: 3px solid rgb(131, 179, 211);
+}
+
 .input-wrapper {
-  color: #000000;
+  position: relative;
+
+  min-height: 48px;
   font-size: 18px;
   line-height: 24px;
 }
 
 .input-wrapper input {
   background-color: #f2f2f2;
+  width: 143px;
+  height: 48px;
   border: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.input-wrapper input::-webkit-outer-spin-button,
+.input-wrapper input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.input-wrapper label {
+  position: absolute;
+  right: 20px;
+  transform: translateY(50%);
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.range-cost-inputs > .input-wrapper:first-child > input {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.range-cost-inputs > .input-wrapper:last-child > input {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.range-slider {
+  position: relative;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.range-bar {
+  position: absolute;
+  height: 4px;
+  background-color: rgb(255, 255, 255);
+}
+
+.range-toggle {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.range-toggle:focus-visible {
+  outline: 3px solid rgb(131, 179, 211);
+}
+
+.range-toggle:active {
+  outline: 2px solid rgb(131, 179, 211);
+}
+
+.toggle-min {
+  left: 0;
+  top: -8px;
+}
+
+.toggle-max {
+  right: -20px;
+  top: -8px;
+}
+
+.field {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  background-color: rgb(0, 0, 0);
+  width: 143px;
+}
+
+.field:hover {
+  background-color: rgb(230, 230, 230);
+}
+
+.field:focus-visible {
+  border: 0;
+  outline: 3px solid rgb(131, 179, 211);
+  background-color: rgb(230, 230, 230);
 }
 
 .filters-action-buttons {
@@ -686,7 +887,7 @@ body {
 
 .select-control:hover,
 .select-control:focus-visible {
-  /* outline: none; */
+  outline: none;
   border-color: rgb(104, 162, 202);
 }
 
@@ -708,7 +909,7 @@ body {
 
 
 .view-button {
-  align-items: center;
+  display: block;
   padding: 15px 14px;
   flex-wrap: wrap;
   border-radius: 4px;
@@ -900,7 +1101,7 @@ body {
   gap: 8px;
 }
 
-.pagination-item {
+.pagination-item-link {
   display: block;
   min-width: 30px;
   height: 60px;
@@ -908,24 +1109,46 @@ body {
   font-weight: 700;
   line-height: 60px;
   color: #ffffff;
-  background-color: #82b3d3;
+  background-color: rgb(130, 179, 211);
   border-radius: 4px;
   text-align: center;
   padding-left: 15px;
   padding-right: 15px;
+  cursor: pointer;
 }
 
-.pagination-item-current {
+.pagination-item-link:not(.pagination-item-current > .pagination-item-link):hover,
+.pagination-item-link:not(.pagination-item-current > .pagination-item-link):focus-visible {
+  background-color: rgb(104, 162, 202);
+  outline: 1px solid rgb(130, 179, 211);
+  outline-offset: -1px;
+}
+
+.pagination-item-link:not(.pagination-item-current > .pagination-item-link):active {
+  background-color: rgb(130, 179, 211);
+  color: rgb(255, 255, 255, 0.3);
+}
+
+.pagination-item-current > .pagination-item-link {
   background-color: #f2f2f2;
   color: #000000;
+  cursor: none;
 }
 
 .pagination-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #ffffff;
   width: 60px;
   height: 60px;
   color: #000000;
   font-weight: 400;
+}
+
+.pagination-dots {
+  display: block;
+  padding-top: 16px
 }
 
 .brown-button:hover,
@@ -980,4 +1203,207 @@ body {
 .green-button:active {
   background-color: rgb(125, 181, 79);
   color: rgba(255, 255, 255, 0.3);
+}
+
+/* Модальное окно */
+
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal-hidden {
+  display: none;
+}
+
+
+
+.modal {
+  position: relative;
+  margin: auto;
+  padding: 64px 70px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+}
+
+.modal > h2 {
+  text-align: left;
+  margin-bottom: 64px;
+  padding-right: 50px;
+  width: 520px;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 64px;
+  right: 52px;
+  background-color: rgb(242, 242, 242);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-image: url("../images/cross_icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+}
+
+
+.search-hotels-form {
+  display: grid;
+  grid-template-areas:
+    "arrival-label arrival-input arrival-input arrival-input"
+    ". error-hint error-hint error-hint"
+    "departure-label departure-input departure-input departure-input"
+    ". hint hint hint"
+    "adult adult-input kids kids-input"
+    ". . . ."
+    "button button button button";
+  grid-template-columns: 121px 110px 188px 110px;
+  grid-template-rows: auto auto auto auto auto 48px auto;
+  column-gap: 16px;
+  align-items: center;
+}
+
+.label-title {
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: rgb(0, 0, 0);
+  text-align: left;
+}
+
+.date-input {
+  height: 48px;
+  background-color: rgb(242, 242, 242);
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: rgb(0, 0, 0);
+  padding-left: 20px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+.check-in-date {
+  grid-area: arrival-label;
+}
+
+.check-in-input-field {
+  grid-area: arrival-input;
+}
+
+.check-out-date {
+  grid-area: departure-label;
+}
+
+.check-out-input-field {
+  grid-area: departure-input;
+}
+
+.input-hint {
+  display: block;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  grid-area: hint;
+  color: rgb(51, 51, 51);
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 21px;
+  margin-bottom: 23px;
+  margin-top: 4px;
+}
+
+.input-hint.error-input-hint {
+  grid-area: error-hint;
+  color: rgb(255, 87, 87);
+}
+
+.amount-input {
+  padding: 0;
+  width: 100%;
+  height: 48px;
+  background-color: rgb(242, 242, 242);
+  border-radius: 4px;
+  border: none;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.amount-input::-webkit-outer-spin-button,
+.amount-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.adult {
+  grid-area: adult;
+}
+
+.adult-amount-input-field {
+  grid-area: adult-input;
+}
+
+.kids {
+  grid-area: kids;
+  padding-left: 73px;
+}
+
+.kids-amount-input-field {
+  grid-area: kids-input;
+}
+
+.modal-button {
+  grid-area: button;
+  height: 60px;
+  background-color: rgb(131, 179, 211);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.tooltip {
+  grid-area: kids;
+}
+
+.tooltip-toggle {
+  position: relative;
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(131, 179, 211);
+  margin-left: auto;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.tooltip-icon {
+  position: absolute;
+  background-position: center;
+  color: rgb(255, 255, 255);
+  transform: translate(-50%, -50%);
 }

@@ -63,51 +63,80 @@
 
           <h2 class="visually-hidden">Фильтры и гостиницы</h2>
           <form class="catalog-filters" action="https://echo.htmlacademy.ru/" method="get" data-test="filter">
+
             <fieldset class="catalog-filter-group">
-              <h3 class="catalog-filter-title">Инфраструктура:</h3>
+              <legend class="catalog-filter-title">Инфраструктура:</legend>
               <ul class="list catalog-filter-list">
                 <li class="catalog-filter-item">
                   <label class="control">
-                    <input class="control-input" type="checkbox" name="swimming-pool" checked>Бассейн</label>
+                    <input class="visually-hidden control-input" type="checkbox" name="swimming-pool" checked>
+                    <span class="control-mark"></span>
+                    <span class="control-label">Бассейн</span>
+                  </label>
                 </li>
                 <li class="catalog-filter-item">
                   <label class="control">
-                    <input class="control-input" type="checkbox" name="parking" checked>Парковка</label>
+                    <input class="visually-hidden control-input" type="checkbox" name="parking" checked>
+                    <span class="control-mark"></span>
+                    <span class="control-label">Парковка</span>
+                  </label>
                 </li>
                 <li class="catalog-filter-item">
                   <label class="control">
-                    <input class="control-input" type="checkbox" name="wifi">Wi-Fi</label>
+                    <input class="visually-hidden control-input" type="checkbox" name="wifi">
+                    <span class="control-mark"></span>
+                    <span class="control-label">Wi-Fi</span>
+                  </label>
                 </li>
               </ul>
             </fieldset>
             <fieldset class="catalog-filter-group">
-              <h3 class="catalog-filter-title">Тип жилья</h3>
+              <legend class="catalog-filter-title">Тип Жилья:</legend>
               <ul class="list catalog-filter-list">
                 <li class="catalog-filter-item">
                   <label class="control">
-                    <input class="control-input" type="radio" name="housing" checked>Гостиница</label>
+                    <input class="visually-hidden control-input" type="radio" name="housing" checked>
+                    <span class="control-mark radiobutton"></span>
+                    <span class="control-label">Гостиница</span>
+                  </label>
                 </li>
                 <li class="catalog-filter-item">
                   <label class="control">
-                    <input class="control-input" type="radio" name="housing">Мотель</label>
+                    <input class="visually-hidden control-input" type="radio" name="housing">
+                    <span class="control-mark radiobutton"></span>
+                    <span class="control-label">Мотель</span>
+                  </label>
                 </li>
                 <li class="catalog-filter-item">
                   <label class="control">
-                    <input class="control-input" type="radio" name="housing">Аппартаменты</label>
+                    <input class="visually-hidden control-input" type="radio" name="housing">
+                    <span class="control-mark radiobutton"></span>
+                    <span class="control-label">Аппартаменты</span>
+                  </label>
                 </li>
               </ul>
             </fieldset>
             <fieldset class="catalog-filter-group catalog-filter-cost">
-              <h3 class="catalog-filter-title">Стоимость, ₽:</h3>
-              <div class="input-wrapper">
-                <label for="price-from">oт</label>
-                <input id="price-from" name="price-from" type="number" min="0" value="0">
+              <legend class="catalog-filter-title">Стоимость, ₽:</legend>
+              <div class="range">
+                <div class="range-cost-inputs">
+                  <div class="input-wrapper">
+                    <label for="price-from">oт</label>
+                    <input class="field" id="price-from" name="price-from" type="number" min="0" value="0">
+                  </div>
+                  <div class="input-wrapper">
+                    <label for="price-to">до</label>
+                    <input class="field" id="price-to" name="price-to" type="number" min="0" value="9000">
+                  </div>
+                </div>
+                <div class="range-slider">
+                  <div class="range-bar" style="left: 0; right: 71px; width: 206px;">
+                    <button class="range-toggle toggle-min" type="button"></button>
+                    <button class="range-toggle toggle-max" type="button"></button>
+                  </div>
+
+                </div>
               </div>
-              <div class="input-wrapper">
-                <label for="price-to">до</label>
-                <input id="price-to" name="price-to" type="number" min="0" value="9000">
-              </div>
-              <div class="range-slider"></div>
             </fieldset>
             <div class="filters-action-buttons">
               <button class="button submit-price-button blue-button" type="submit">Применить</button>
@@ -229,19 +258,19 @@
             <li class="pagination-item pagination-item-current">
               <a class="pagination-item-link">1</a>
             </li>
-            <li class="pagination-item blue-button">
+            <li class="pagination-item">
               <a class="pagination-item-link">2</a>
             </li>
-            <li class="pagination-item blue-button">
+            <li class="pagination-item">
               <a class="pagination-item-link">3</a>
             </li>
-            <li class="pagination-item blue-button">
+            <li class="pagination-item">
               <a class="pagination-item-link">4</a>
             </li>
             <li class="pagination-item pagination-more">
               <span class="pagination-dots">...</span>
             </li>
-            <li class="pagination-item blue-button">
+            <li class="pagination-item">
               <a class="pagination-item-link">10</a>
             </li>
           </ul>
@@ -249,8 +278,8 @@
         <section class="subscribe subscribe-light" data-test="subscribe">
           <h2 class="visually-hidden">Подписка на рассылку</h2>
           <p class="slogan-title dark-title">Подпишитесь на рассылку</p>
+          <p class="slogan-text dark-text">Только полезная информация и никакого спама,<br> честное бойскаутское!</p>
           <form class="subscribe-form" action="https://echo.htmlacademy.ru" method="post">
-            <p class="slogan-text dark-text">Только полезная информация и никакого спама,<br> честное бойскаутское!</p>
             <input class="distribution-input" type="email" name="distribution" placeholder="Ваш e-mail" required>
             <button class="distribute-button button blue-button" type="submit">Подписаться</button>
           </form>
