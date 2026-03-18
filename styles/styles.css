@@ -76,6 +76,13 @@ body {
   outline: none;
 }
 
+.button:disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: #e0e0e0;
+  color: #a0a0a0;
+}
+
 .list {
   list-style-type: none;
   margin: 0;
@@ -415,6 +422,7 @@ body {
   font-size: 18px;
   line-height: 24px;
   border: none;
+  outline: none;
   width: 452px;
   height: 52px;
   padding-left: 20px;
@@ -425,10 +433,6 @@ body {
   font-family: inherit;
   border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
-}
-
-.subscribe-light .distribution-input {
-  background-color: rgb(255, 255, 255);
 }
 
 .search-hotel {
@@ -519,6 +523,8 @@ body {
 
 .contacts-phone:hover,
 .contacts-phone:focus {
+  border: none;
+  outline: none;
   color: #756157;
 }
 
@@ -623,7 +629,12 @@ body {
 .catalog-filters {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: left;
+  gap: 70px;
+}
+
+.catalog-filters > .catalog-filter-group:nth-child(2) {
+  margin-right: 81px;
 }
 
 .catalog-filter-group {
@@ -709,8 +720,9 @@ body {
   width: 10px;
   border-radius: 50%;
   background-color: rgb(63, 94, 114);
-  left: 5px;
-  top: 5px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   content: "";
 }
 
@@ -718,11 +730,21 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 45px;
+  margin-bottom: 44px;
 }
 
 .control-input:focus-visible + .control-mark {
   outline: 3px solid rgb(131, 179, 211);
+}
+
+.control-input:disabled + .control-mark {
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: default;
+}
+
+.control-input:disabled ~ .control-label {
+  color: rgba(255, 255, 255, 0.3);
+  cursor: default;
 }
 
 .input-wrapper {
@@ -748,6 +770,10 @@ body {
 .input-wrapper input::-webkit-inner-spin-button {
   appearance: none;
   margin: 0;
+}
+
+.input-wrapper input {
+  -moz-appearance: textfield;
 }
 
 .input-wrapper label {
@@ -824,16 +850,17 @@ body {
 
 .field:focus-visible {
   border: 0;
-  outline: 3px solid rgb(131, 179, 211);
+  outline: 2px solid rgb(131, 179, 211);
   background-color: rgb(230, 230, 230);
 }
 
 .filters-action-buttons {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 32px;
+  justify-content: space-between;
+  height: 104px;
   width: 191px;
+  align-self: flex-end;
 
 }
 
@@ -1443,6 +1470,10 @@ body {
   margin: 0;
 }
 
+.amount-input {
+  -moz-appearance: textfield;
+}
+
 .adult {
   grid-area: adult;
 }
@@ -1470,7 +1501,7 @@ body {
 
 .modal-button:active {
   color: rgba(255, 255, 255, 0.3);
-    outline: none;
+  outline: none;
   background-color: rgb(104, 162, 202);
 }
 

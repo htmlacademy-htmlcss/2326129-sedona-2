@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="images/favicon.png" type="images/png" sizes="32x32">
     <title>Каталог гостиниц Седоны</title>
   </head>
 
@@ -63,7 +64,6 @@
 
           <h2 class="visually-hidden">Фильтры и гостиницы</h2>
           <form class="catalog-filters" action="https://echo.htmlacademy.ru/" method="get" data-test="filter">
-
             <fieldset class="catalog-filter-group">
               <legend class="catalog-filter-title">Инфраструктура:</legend>
               <ul class="list catalog-filter-list">
@@ -111,7 +111,7 @@
                   <label class="control">
                     <input class="visually-hidden control-input" type="radio" name="housing">
                     <span class="control-mark radiobutton"></span>
-                    <span class="control-label">Аппартаменты</span>
+                    <span class="control-label">Апартаменты</span>
                   </label>
                 </li>
               </ul>
@@ -149,6 +149,8 @@
             <span class="amount-hotels">Найдено гостиниц: 38</span>
             <select class="select-control" aria-label="Сортировка">
               <option value="cheaper">Сначала дешевые</option>
+              <option value="expensive">Сначала дорогие</option>
+              <option value="high-rating">Сначала с высоким рейтингом</option>
             </select>
             <ul class="list sorting-buttons-list">
               <li class="sorting-buttons-item sorting-item-current">
@@ -262,16 +264,16 @@
               <a class="pagination-item-link" href="#">2</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-item-link"  href="#">3</a>
+              <a class="pagination-item-link" href="#">3</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-item-link"  href="#">4</a>
+              <a class="pagination-item-link" href="#">4</a>
             </li>
             <li class="pagination-item pagination-more">
               <span class="pagination-dots">...</span>
             </li>
             <li class="pagination-item">
-              <a class="pagination-item-link"  href="#">10</a>
+              <a class="pagination-item-link" href="#">10</a>
             </li>
           </ul>
         </section>
