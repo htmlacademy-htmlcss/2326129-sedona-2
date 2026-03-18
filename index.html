@@ -96,7 +96,7 @@
               <h3 class="advantage-title service-title-icon">Жильё</h3>
               <p class="advantage-text">Рекомендуем пожить<br> в настоящем мотеле,<br> всё как в кино!</p>
             </li>
-            <li class="advantage-item light-color-card">
+            <li class="advantage-item white-color-card">
               <h3 class="advantage-title service-title-icon">Еда</h3>
               <p class="advantage-text">Всегда заказывайте<br> топовый фирменный бургер,<br> вы не разочаруетесь!</p>
             </li>
@@ -202,33 +202,70 @@
         <div class="modal">
           <h2 class="slogan-title">Поиск гостиницы в Седоне</h2>
           <button class="modal-close-button" type="button">
+            <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 4.29231L15.7077 3L10 8.70769L4.29231 3L3 4.29231L8.70769 10L3 15.7077L4.29231 17L10 11.2923L15.7077 17L17 15.7077L11.2923 10L17 4.29231Z"/>
+</svg>
+
             <span class="visually-hidden">Закрыть модальное окно</span>
           </button>
           <form class="search-hotels-form" action="https://echo.htmlacademy.ru" method="get">
             <label class="label-title check-in-date" for="check-in">Дата Заезда:</label>
             <input class="date-input check-in-input-field" id="check-in" name="check-in" type="text"
-              value="27 апреля 2020" required>
+              value="27 апреля 2020" placeholder="Укажите дату" required>
             <span class="input-hint error-input-hint">Мы не можем отправить вас в прошлое</span>
             <label class="label-title check-out-date" for="check-out">Дата Выезда:</label>
             <input class="date-input check-out-input-field" id="check-out" name="check-out" type="text"
-              value="1 сентября 2023" required>
+              value="1 сентября 2023" placeholder="Укажите дату" required>
             <span class="input-hint">На эти даты есть свободные номера. Пока есть.</span>
             <label class="label-title adult" for="adult-input">Взрослые:</label>
-            <input class="amount-input adult-amount-input-field" id="adult-input" name="adult-field" type="number"
-              value="2" required>
-            <label class="label-title kids" for="kids-input">Дети:</label>
-            <span class="tooltip">
-              <button class="tooltip-toggle" type="button">
-                <svg class="tooltip-icon" width="2" height="12" viewBox="0 0 2 12" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H2V2H0V0ZM2 12H0V3H2V12Z" fill="white" />
+            <div class="amount-adults">
+              <button class="amount-button decrement" type="button" aria-label="Уменьшить количество взрослых">
+
+                <svg class="amount-icon" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 9V11H17V9H3Z" />
+                </svg>
+              </button>
+              <input class="amount-input adult-amount-input-field" id="adult-input" name="adult-field" type="number"
+                value="2" required>
+              <button class="amount-button increment" type="button" aria-label="Увеличить количество взрослых">
+
+                <svg class="amount-icon" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" />
                 </svg>
 
               </button>
-              <!-- <span class="tooltip-text">Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</span> -->
-            </span>
-            <input class="amount-input kids-amount-input-field" id="kids-input" name="kids-field" type="number"
-              value="2">
+            </div>
+            <div class="kids-wrapper">
+              <label class="label-title kids" for="kids-input">Дети:</label>
+              <span class="tooltip">
+                <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-date">
+                  <svg class="tooltip-icon" width="2" height="12" viewBox="0 0 2 12" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H2V2H0V0ZM2 12H0V3H2V12Z" fill="white" />
+                  </svg>
+                </button>
+                <span class="tooltip-text" role="tooltip" id="tooltip-label-date">Укажите количество детей, которые
+                  будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
+              </span>
+            </div>
+            <div class="amount-kids">
+              <button class="amount-button decrement" type="button" aria-label="Уменьшить количество детей">
+                <svg class="amount-icon" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 9V11H17V9H3Z" />
+                </svg>
+              </button>
+              <input class="amount-input kids-amount-input-field" id="kids-input" name="kids-field" type="number"
+                value="2">
+
+              <button class="amount-button increment" type="button" aria-label="Увеличить количество детей">
+
+                <svg class="amount-icon" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" />
+                </svg>
+
+              </button>
+
+            </div>
             <button class="button modal-button" type="submit">Найти</button>
           </form>
         </div>

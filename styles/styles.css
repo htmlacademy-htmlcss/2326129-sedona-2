@@ -274,6 +274,10 @@ body {
   border-bottom: 2px solid rgba(255, 255, 255, 0.3)
 }
 
+.white-color-card {
+  background-color: rgb(255, 255, 255);
+}
+
 .white-title {
   color: #ffffff;
 }
@@ -352,7 +356,7 @@ body {
 /* Подписка */
 
 .subscribe {
-  background-color: #237fe9;
+  background-color: rgb(58, 80, 104);
   background-image: url("../images/subscribe_background.jpg");
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -1114,7 +1118,7 @@ body {
   text-align: center;
   padding-left: 15px;
   padding-right: 15px;
-  cursor: pointer;
+  text-decoration: none;
 }
 
 .pagination-item-link:not(.pagination-item-current > .pagination-item-link):hover,
@@ -1225,8 +1229,6 @@ body {
   display: none;
 }
 
-
-
 .modal {
   position: relative;
   margin: auto;
@@ -1251,12 +1253,32 @@ body {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background-image: url("../images/cross_icon.svg");
-  background-repeat: no-repeat;
-  background-position: center;
+  fill: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   cursor: pointer;
 }
+
+.modal-close-button:hover {
+  background-color: rgb(229, 229, 229);
+}
+
+.modal-close-button:focus-visible {
+  background-color: rgb(229, 229, 229);
+  outline: 3px solid rgb(131, 179, 211);
+}
+
+.modal-close-button:active {
+  background-color: rgb(229, 229, 229);
+}
+
+.modal-close-button:active svg {
+  fill: rgba(0, 0, 0, 0.3);
+}
+
+
 
 
 .search-hotels-form {
@@ -1297,6 +1319,22 @@ body {
   padding-left: 20px;
   padding-top: 0;
   padding-bottom: 0;
+  background-image: url("../images/date.svg");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+}
+
+.date-input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.date-input:hover {
+  background-color: rgb(229, 229, 229);
+}
+
+.date-input:focus-visible {
+  outline: 3px solid rgb(131, 179, 211);
+  background-color: rgb(229, 229, 229);
 }
 
 
@@ -1335,12 +1373,61 @@ body {
   color: rgb(255, 87, 87);
 }
 
-.amount-input {
-  padding: 0;
-  width: 100%;
-  height: 48px;
+.amount-adults {
+  display: flex;
+  align-items: center;
+  grid-area: adult-input;
   background-color: rgb(242, 242, 242);
   border-radius: 4px;
+  width: 100%;
+}
+
+.amount-kids {
+  grid-area: kids-input;
+  display: flex;
+  align-items: center;
+  background-color: rgb(242, 242, 242);
+  border-radius: 4px;
+  width: 100%;
+}
+
+.amount-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 48px;
+  outline: none;
+  cursor: pointer;
+}
+
+.amount-icon {
+  fill: rgba(117, 97, 87, 0.3);
+  border-radius: 4px;
+}
+
+.amount-button:hover .amount-icon {
+  fill: rgb(0, 0, 0);
+}
+
+.amount-button:focus-visible .amount-icon {
+  border: none;
+  outline: 3px solid rgb(130, 179, 211);
+}
+
+.amount-button:active .amount-icon {
+  fill: rgba(0, 0, 0, 0.2);
+}
+
+.amount-input {
+  padding: 0;
+  width: 31px;
+  height: 48px;
+
+  background-color: transparent;
   border: none;
   font-family: inherit;
   font-size: 18px;
@@ -1364,15 +1451,6 @@ body {
   grid-area: adult-input;
 }
 
-.kids {
-  grid-area: kids;
-  padding-left: 73px;
-}
-
-.kids-amount-input-field {
-  grid-area: kids-input;
-}
-
 .modal-button {
   grid-area: button;
   height: 60px;
@@ -1384,8 +1462,28 @@ body {
   font-weight: 700;
 }
 
-.tooltip {
+.modal-button:hover,
+.modal-button:focus-visible {
+  outline: none;
+  background-color: rgb(104, 162, 202);
+}
+
+.modal-button:active {
+  color: rgba(255, 255, 255, 0.3);
+    outline: none;
+  background-color: rgb(104, 162, 202);
+}
+
+.kids-wrapper {
   grid-area: kids;
+  display: flex;
+  align-items: center;
+  padding-left: 72px;
+  gap: 10px;
+}
+
+.tooltip {
+  position: relative;
 }
 
 .tooltip-toggle {
@@ -1396,7 +1494,6 @@ body {
   border-radius: 50%;
   border: none;
   background-color: rgb(131, 179, 211);
-  margin-left: auto;
   margin-right: 30px;
   cursor: pointer;
 }
@@ -1404,6 +1501,44 @@ body {
 .tooltip-icon {
   position: absolute;
   background-position: center;
-  color: rgb(255, 255, 255);
+  fill: rgb(255, 255, 255);
   transform: translate(-50%, -50%);
+}
+
+.tooltip-text {
+  display: none;
+  position: absolute;
+  font-size: 16px;
+  line-height: 20px;
+  width: 216px;
+  padding-top: 20px;
+  padding-right: 18px;
+  padding-bottom: 22px;
+  padding-left: 22px;
+  border-radius: 10px;
+  background-color: rgb(51, 51, 51);
+  color: rgb(255, 255, 255);
+  left: 13px;
+  top: calc(100% + 15px);
+  text-align: left;
+  transform: translateX(-50%);
+}
+
+.tooltip-text::before {
+  content: '';
+  background-image: url("../images/triangle_for_tooltip.svg");
+  color: #000000;
+  width: 19px;
+  height: 9px;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tooltip-toggle:hover + .tooltip-text,
+.tooltip-toggle:focus-visible + .tooltip-text {
+  display: block;
 }
