@@ -90,6 +90,7 @@ body {
 }
 
 /* Хедер */
+
 .navigation {
   display: flex;
   padding-left: 70px;
@@ -144,7 +145,7 @@ body {
   left: 16px;
   bottom: -1px;
   height: 2px;
-  background-color: rgb(117, 98, 87);
+  background-color: #756257;
 }
 
 .navigation-link.button {
@@ -156,17 +157,20 @@ body {
   width: 92px;
 }
 
-.search {
-  background-image: url("../images/search.svg");
-  background-repeat: no-repeat;
-  background-position: center;
+.navigation-link:hover,
+.navigation-link:focus-visible {
+  outline: none;
+  color: #756157;
 }
 
+.navigation-link:active {
+  color: #817974;
+}
+
+.search,
 .favorite {
-  position: relative;
-  background-image: url("../images/heart.svg");
-  background-repeat: no-repeat;
-  background-position: center;
+  fill: #000000;
+  transition: background-color 0.2s ease;
 }
 
 .favorite::after {
@@ -174,7 +178,7 @@ body {
   content: "12";
   top: 9px;
   right: 8px;
-  background-color: rgb(125, 181, 79);
+  background-color: #7db54f;
   height: 20px;
   width: 20px;
   border-radius: 50%;
@@ -182,7 +186,20 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 10px;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
+}
+
+.search:hover,
+.search:focus-visible,
+.favorite:hover,
+.favorite:focus-visible {
+  fill: #756257;
+  outline: none;
+}
+
+.search:active,
+.favorite:active {
+  fill: #817974;
 }
 
 /* Главная страница */
@@ -208,6 +225,8 @@ body {
 .slogan {
   padding-top: 69px;
   padding-bottom: 69px;
+  padding-left: 258px;
+  padding-right: 258px;
 }
 
 .slogan-title {
@@ -241,7 +260,6 @@ body {
   vertical-align: middle;
 }
 
-
 .advantage-item-wide {
   grid-column: 1 / -1;
   display: flex;
@@ -266,6 +284,8 @@ body {
   padding-top: 102px;
   margin-top: 0;
   margin-bottom: 62px;
+  padding-left: 85px;
+  padding-right: 85px;
 }
 
 .advantages .advantage-title::after {
@@ -282,7 +302,7 @@ body {
 }
 
 .white-color-card {
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
 }
 
 .white-title {
@@ -310,6 +330,12 @@ body {
 
 .local-service {
   padding-top: 64px;
+}
+
+.local-service .slogan-title,
+.local-service .slogan-text {
+  padding-left: 258px;
+  padding-right: 258px;
 }
 
 .local-service .advantage-title {
@@ -340,6 +366,16 @@ body {
   background-image: url("../images/advantage_gift_icon.svg");
 }
 
+.advantage-text {
+  padding-bottom: 81px;
+}
+
+.advantage-text,
+.advantage-description {
+  padding-left: 85px;
+  padding-right: 85px;
+}
+
 .local-service .advantage-text {
   margin: 0;
 }
@@ -363,10 +399,10 @@ body {
 /* Подписка */
 
 .subscribe {
-  background-color: rgb(58, 80, 104);
+  background-color: #3a5068;
   background-image: url("../images/subscribe_background.jpg");
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
   text-align: center;
   border: none;
   color: #ffffff;
@@ -378,7 +414,7 @@ body {
 
 .subscribe-light {
   background-image: none;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   width: 684px;
   padding: 96px 258px 104px;
 }
@@ -422,7 +458,6 @@ body {
   font-size: 18px;
   line-height: 24px;
   border: none;
-  outline: none;
   width: 452px;
   height: 52px;
   padding-left: 20px;
@@ -461,6 +496,7 @@ body {
 }
 
 /* Футер */
+
 .page-footer {
   display: flex;
   justify-content: space-between;
@@ -485,8 +521,6 @@ body {
   width: 33.33%;
 }
 
-
-
 .footer-social-link {
   display: flex;
   align-items: center;
@@ -496,12 +530,12 @@ body {
 }
 
 .footer-social-icon {
-  fill: rgb(131, 179, 211);
+  fill: #83b3d3;
 }
 
 .footer-social-link:hover > svg,
 .footer-social-link:focus-visible > svg {
-  fill: rgb(104, 162, 202);
+  fill: #68a2ca;
 }
 
 .footer-social-link:active > svg {
@@ -509,7 +543,9 @@ body {
 }
 
 .contacts-phone-item {
-  min-height: 50px;
+  min-height: 46px;
+  display: flex;
+  align-items:end;
 }
 
 .contacts-phone {
@@ -518,7 +554,7 @@ body {
   color: #000000;
   font-size: 40px;
   line-height: 40px;
-  min-width: 720px;
+  max-width: 720px;
 }
 
 .contacts-phone:hover,
@@ -541,18 +577,17 @@ body {
 }
 
 .footer-logo > svg {
-  fill: rgb(0, 0, 0);
+  fill: #000000;
 }
 
 .footer-logo:hover svg,
 .footer-logo:focus-visible > svg {
-  fill: rgb(117, 97, 87);
+  fill: #756157;
 }
 
 .footer-logo:active > svg {
   fill: rgba(117, 97, 87, 0.3);
 }
-
 
 /* Каталог фильтры */
 
@@ -560,7 +595,7 @@ body {
   background-image: url("../images/catalog/filters_background.jpg");
   background-color: #8b5547;
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
   color: #ffffff;
   padding-top: 35px;
   padding-right: 70px;
@@ -580,7 +615,6 @@ body {
   font-weight: 700;
   text-align: left;
 }
-
 
 .breadcrumbs-list {
   display: flex;
@@ -613,9 +647,9 @@ body {
 .breadcrumbs-item:not(:first-child)::before {
   position: absolute;
   content: "";
-  background-image: url("../images/catalog/breadcrumbs-divider.svg");
+  background-image: url("../images/catalog/breadcrumbs_divider.svg");
   background-repeat: no-repeat;
-  color: white;
+  color: #ffffff;
   left: -16px;
   top: 7px;
   width: 7px;
@@ -623,8 +657,6 @@ body {
 }
 
 /* Фильтры */
-
-
 
 .catalog-filters {
   display: flex;
@@ -705,7 +737,7 @@ body {
   position: absolute;
   width: 20px;
   height: 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   border-radius: 4px;
   left: 0;
 }
@@ -719,7 +751,7 @@ body {
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  background-color: rgb(63, 94, 114);
+  background-color: #3f5e72;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -734,7 +766,7 @@ body {
 }
 
 .control-input:focus-visible + .control-mark {
-  outline: 3px solid rgb(131, 179, 211);
+  outline: 3px solid #83b3d3;
 }
 
 .control-input:disabled + .control-mark {
@@ -802,25 +834,25 @@ body {
 .range-bar {
   position: absolute;
   height: 4px;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
 }
 
 .range-toggle {
   position: absolute;
   height: 20px;
   width: 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .range-toggle:focus-visible {
-  outline: 3px solid rgb(131, 179, 211);
+  outline: 3px solid #83b3d3;
 }
 
 .range-toggle:active {
-  outline: 2px solid rgb(131, 179, 211);
+  outline: 2px solid #83b3d3;
 }
 
 .toggle-min {
@@ -840,18 +872,18 @@ body {
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
-  background-color: rgb(0, 0, 0);
+  background-color: #000000;
   width: 143px;
 }
 
 .field:hover {
-  background-color: rgb(230, 230, 230);
+  background-color: #e6e6e6;
 }
 
 .field:focus-visible {
   border: 0;
-  outline: 2px solid rgb(131, 179, 211);
-  background-color: rgb(230, 230, 230);
+  outline: 2px solid #83b3d3;
+  background-color: #e6e6e6;
 }
 
 .filters-action-buttons {
@@ -861,7 +893,6 @@ body {
   height: 104px;
   width: 191px;
   align-self: flex-end;
-
 }
 
 .submit-price-button,
@@ -886,30 +917,34 @@ body {
 
 .sort-products {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
   padding-top: 50px;
   padding-bottom: 40px;
 }
 
 .amount-hotels {
+  display: block;
   color: #000000;
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
   text-transform: uppercase;
   text-align: left;
-  min-width: 477px;
-  margin-right: 4px;
+  max-width: 500px;
+  padding-right: 34px;
+  margin-right: 166px;
 }
 
 .select-control {
+  -moz-appearance: none;
+  background-color: #ffffff;
   width: 292px;
   height: 49px;
   border: 2px solid #e5e5e5;
   border-radius: 4px;
   margin-right: 5px;
-  padding-left: 20px;
+  padding-left: 19px;
   appearance: none;
   background-image: url("../images/catalog/sorting_selector_element.svg");
   background-position: right 20px center;
@@ -919,7 +954,7 @@ body {
 .select-control:hover,
 .select-control:focus-visible {
   outline: none;
-  border-color: rgb(104, 162, 202);
+  border-color: #68a2ca;
 }
 
 .select-control:disabled {
@@ -934,20 +969,20 @@ body {
   align-items: center;
   width: 168px;
   gap: 8px;
-  margin: 0;
+  margin: 0 ;
+  margin-left: auto;
   padding: 0;
 }
-
 
 .view-button {
   display: block;
   padding: 15px 14px;
   flex-wrap: wrap;
   border-radius: 4px;
-  border: 2px solid rgb(229, 229, 229);
+  border: 2px solid #e5e5e5;
   width: 16px;
   height: 14px;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
 }
 
 .view-button:hover,
@@ -957,22 +992,22 @@ body {
 
 .view-button:focus-visible {
   outline: none;
-  border: 2px solid rgb(104, 162, 194);
+  border: 2px solid #68a2c2;
 }
 
-.sorting-buttons-item:first-child > .view-button {
+.table-view-button {
   background-image: url("../images/catalog/table_mode.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.sorting-buttons-item:nth-child(2) > .view-button {
+.cards-view-button {
   background-image: url("../images/catalog/cards_mode.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.sorting-buttons-item:last-child > .view-button {
+.list-view-button {
   background-image: url("../images/catalog/list_mode.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -982,10 +1017,7 @@ body {
   border: 2px solid rgba(0, 0, 0);
 }
 
-
 /* Каталог гостиницы */
-
-
 
 .select-control {
   font-family: inherit;
@@ -1137,7 +1169,7 @@ body {
   font-weight: 700;
   line-height: 60px;
   color: #ffffff;
-  background-color: rgb(130, 179, 211);
+  background-color: #82b3d3;
   border-radius: 4px;
   text-align: center;
   padding-left: 15px;
@@ -1145,22 +1177,22 @@ body {
   text-decoration: none;
 }
 
-.pagination-item-link:not(.pagination-item-current > .pagination-item-link):hover,
-.pagination-item-link:not(.pagination-item-current > .pagination-item-link):focus-visible {
-  background-color: rgb(104, 162, 202);
-  outline: 1px solid rgb(130, 179, 211);
+.pagination-item-link-current {
+  background-color: #f2f2f2;
+  color: #000000;
+  cursor: unset;
+}
+
+.pagination-item-link:not(.pagination-item-link-current):hover,
+.pagination-item-link:not(.pagination-item-link-current):focus-visible {
+  background-color: #68a2ca;
+  outline: 1px solid #82b3d3;
   outline-offset: -1px;
 }
 
-.pagination-item-link:not(.pagination-item-current > .pagination-item-link):active {
-  background-color: rgb(130, 179, 211);
-  color: rgb(255, 255, 255, 0.3);
-}
-
-.pagination-item-current > .pagination-item-link {
-  background-color: #f2f2f2;
-  color: #000000;
-  cursor: none;
+.pagination-item-link:not(.pagination-item-link-current):active {
+  background-color: #82b3d3;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .pagination-more {
@@ -1181,18 +1213,19 @@ body {
 
 .brown-button:hover,
 .brown-button:focus {
-  background-color: rgb(97, 80, 72);
+  background-color: #615048;
 }
 
 .brown-button:active {
-  background-color: rgb(117, 97, 87);
+  background-color: #756157;
   color: rgba(255, 255, 255, 0.3);
 }
 
 .brown-button:disabled,
 .blue-button:disabled,
 .green-button:disabled {
-  background-color: rgb(229, 229, 229);
+  background-color: #e5e5e5;
+  color: #ffffff;
 }
 
 .button-transparent:hover {
@@ -1200,7 +1233,7 @@ body {
 }
 
 .button-transparent:focus-visible {
-  outline: 3px solid rgb(131, 179, 211);
+  outline: 3px solid #83b3d3;
 }
 
 .button-transparent:active {
@@ -1209,27 +1242,28 @@ body {
 
 .button-transparent:disabled {
   color: rgba(255, 255, 255, 0.1);
+  background-color: transparent;
 }
 
 .blue-button:hover,
 .blue-button:focus {
   outline: none;
-  background-color: rgb(104, 162, 202);
+  background-color: #68a2ca;
 }
 
 .blue-button:active {
-  background-color: rgb(130, 179, 211);
+  background-color: #82b3d3;
   color: rgba(255, 255, 255, 0.3);
 }
 
 .green-button:hover,
 .green-button:focus {
   outline: none;
-  background-color: rgb(108, 158, 66);
+  background-color: #6c9e42;
 }
 
 .green-button:active {
-  background-color: rgb(125, 181, 79);
+  background-color: #7db54f;
   color: rgba(255, 255, 255, 0.3);
 }
 
@@ -1257,7 +1291,7 @@ body {
   position: relative;
   margin: auto;
   padding: 64px 70px;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.15);
   border-radius: 30px;
 }
@@ -1273,11 +1307,11 @@ body {
   position: absolute;
   top: 64px;
   right: 52px;
-  background-color: rgb(242, 242, 242);
+  background-color: #f2f2f2;
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  fill: rgb(0, 0, 0);
+  fill: #000000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1286,24 +1320,21 @@ body {
 }
 
 .modal-close-button:hover {
-  background-color: rgb(229, 229, 229);
+  background-color: #e5e5e5;
 }
 
 .modal-close-button:focus-visible {
-  background-color: rgb(229, 229, 229);
-  outline: 3px solid rgb(131, 179, 211);
+  background-color: #e5e5e5;
+  outline: 3px solid #83b3d3;
 }
 
 .modal-close-button:active {
-  background-color: rgb(229, 229, 229);
+  background-color: #e5e5e5;
 }
 
 .modal-close-button:active svg {
   fill: rgba(0, 0, 0, 0.3);
 }
-
-
-
 
 .search-hotels-form {
   display: grid;
@@ -1326,20 +1357,20 @@ body {
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
-  color: rgb(0, 0, 0);
+  color: #000000;
   text-align: left;
 }
 
 .date-input {
   height: 48px;
-  background-color: rgb(242, 242, 242);
+  background-color: #f2f2f2;
   border: none;
   border-radius: 4px;
   font-family: inherit;
   font-size: 18px;
   font-weight: 700;
   line-height: 24px;
-  color: rgb(0, 0, 0);
+  color: #000000;
   padding-left: 20px;
   padding-top: 0;
   padding-bottom: 0;
@@ -1353,12 +1384,12 @@ body {
 }
 
 .date-input:hover {
-  background-color: rgb(229, 229, 229);
+  background-color: #e5e5e5;
 }
 
 .date-input:focus-visible {
-  outline: 3px solid rgb(131, 179, 211);
-  background-color: rgb(229, 229, 229);
+  outline: 3px solid #83b3d3;
+  background-color: #e5e5e5;
 }
 
 
@@ -1384,7 +1415,7 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   grid-area: hint;
-  color: rgb(51, 51, 51);
+  color: #333333;
   font-family: inherit;
   font-size: 16px;
   line-height: 21px;
@@ -1394,14 +1425,14 @@ body {
 
 .input-hint.error-input-hint {
   grid-area: error-hint;
-  color: rgb(255, 87, 87);
+  color: #ff5757;
 }
 
 .amount-adults {
   display: flex;
   align-items: center;
   grid-area: adult-input;
-  background-color: rgb(242, 242, 242);
+  background-color: #f2f2f2;
   border-radius: 4px;
   width: 100%;
 }
@@ -1410,7 +1441,7 @@ body {
   grid-area: kids-input;
   display: flex;
   align-items: center;
-  background-color: rgb(242, 242, 242);
+  background-color: #f2f2f2;
   border-radius: 4px;
   width: 100%;
 }
@@ -1434,12 +1465,12 @@ body {
 }
 
 .amount-button:hover .amount-icon {
-  fill: rgb(0, 0, 0);
+  fill: #000000;
 }
 
 .amount-button:focus-visible .amount-icon {
   border: none;
-  outline: 3px solid rgb(130, 179, 211);
+  outline: 3px solid #82b3d3;
 }
 
 .amount-button:active .amount-icon {
@@ -1450,14 +1481,13 @@ body {
   padding: 0;
   width: 31px;
   height: 48px;
-
   background-color: transparent;
   border: none;
   font-family: inherit;
   font-size: 18px;
   font-weight: 700;
   line-height: 24px;
-  color: rgb(0, 0, 0);
+  color: #000000;
   text-align: center;
 }
 
@@ -1482,7 +1512,7 @@ body {
 .modal-button {
   grid-area: button;
   height: 60px;
-  background-color: rgb(131, 179, 211);
+  background-color: #83b3d3;
   border-radius: 10px;
   font-family: inherit;
   font-size: 20px;
@@ -1493,13 +1523,13 @@ body {
 .modal-button:hover,
 .modal-button:focus-visible {
   outline: none;
-  background-color: rgb(104, 162, 202);
+  background-color: #68a2ca;
 }
 
 .modal-button:active {
   color: rgba(255, 255, 255, 0.3);
   outline: none;
-  background-color: rgb(104, 162, 202);
+  background-color: #68a2ca;
 }
 
 .kids-wrapper {
@@ -1521,7 +1551,7 @@ body {
   height: 26px;
   border-radius: 50%;
   border: none;
-  background-color: rgb(131, 179, 211);
+  background-color: #83b3d3;
   margin-right: 30px;
   cursor: pointer;
 }
@@ -1529,7 +1559,7 @@ body {
 .tooltip-icon {
   position: absolute;
   background-position: center;
-  fill: rgb(255, 255, 255);
+  fill: #ffffff;
   transform: translate(-50%, -50%);
 }
 
@@ -1545,7 +1575,7 @@ body {
   padding-left: 22px;
   border-radius: 10px;
   background-color: rgb(51, 51, 51);
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   left: 13px;
   top: calc(100% + 15px);
   text-align: left;
